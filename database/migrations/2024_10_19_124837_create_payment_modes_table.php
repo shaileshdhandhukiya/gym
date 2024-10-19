@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('payment_modes', function (Blueprint $table) {
             $table->id();
+            $table->string('mode'); // Payment mode (e.g., Cash, Credit Card, etc.)
+            $table->boolean('status')->default(1); // Active or inactive status
             $table->timestamps();
         });
     }
