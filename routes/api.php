@@ -19,11 +19,12 @@ use App\Http\Controllers\API\AuthController;
 
 // Public routes
 Route::post('register', [AuthController::class, 'register']);
-// Route::post('login', [AuthController::class, 'login']);
-
 Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
+
+    //expenses
+    Route::apiResource('expenses', API\ExpenseController::class);
 
     // packages
     Route::apiResource('packages', API\PackageController::class);
