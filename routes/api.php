@@ -27,6 +27,9 @@ Route::middleware('auth:api')->group(function () {
 
     // packages
     Route::apiResource('packages', API\PackageController::class);
+
+    // Equipment
+    Route::apiResource('equipment',  API\EquipmentController::class);
   
     // users
     Route::post('users', [API\UserController::class, 'create']); // Create a user
